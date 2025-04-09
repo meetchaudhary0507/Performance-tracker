@@ -1,0 +1,37 @@
+from zipfile import ZipFile
+
+import shutil
+
+
+
+# Define the paths to the uploaded files
+
+uploaded_files = [
+
+    "/mnt/data/file-KYt2gM2YsQcjGrhcm3o7MD.xlsx",
+
+    "/mnt/data/file-YcRqAQSjxTZvhkDxCW2iCX.pdf",
+
+    "/mnt/data/file-N27nhoW4qRZGqrVQyVaizN.pdf"
+
+]
+
+
+
+# Define the output zip file path
+
+output_zip_path = "/mnt/data/Employee_Performance_Tracker_Project.zip"
+
+
+
+# Create a zip file with all project files
+
+with ZipFile(output_zip_path, 'w') as zipf:
+
+    for file_path in uploaded_files:
+
+        zipf.write(file_path, arcname=file_path.split("/")[-1])
+
+
+
+output_zip_path
